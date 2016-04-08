@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Ejemplo Login con CodeIgniter - Area privada</title>
+	<title> Login - Area privada</title>
 </head>
 <body>
 	<h1>Home</h1>

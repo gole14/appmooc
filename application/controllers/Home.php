@@ -14,14 +14,14 @@ class Home extends CI_Controller{
 			$this->load->view('home_view',$data);
 		}else{
 			//IF NO SESSION, REDIRECT TO LOGIN PAGE
-			redirect('login','refresh');
+			redirect('Login','refresh');
 		}
 	}
 
 	function logout(){
 		$this->session->unset_userdata('logged_in');
 		session_destroy();
-		redirect('home','refresh');
+		redirect('Home','refresh');
 	}
 }
 
