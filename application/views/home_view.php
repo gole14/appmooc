@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 	<h1>Home</h1>
-	<h2>Welcome <?php echo $username; ?>! </h2>
-	<a href="home/logout">Logout</a>
+	<h2>Welcome <?php echo $email; ?>! </h2>
+	<a href="<?php echo base_url('main/logout/'); ?>">Logout</a>
 </body>
 </html>
