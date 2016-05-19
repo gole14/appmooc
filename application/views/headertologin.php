@@ -11,7 +11,7 @@
     <meta name="description" content="">         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">         
-    <link rel="stylesheet"href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
     <link rel="stylesheet" href="/public/css/main.css">
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url(); ?>assets/css/style.css" />     
 </head>     

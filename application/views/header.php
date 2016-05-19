@@ -6,13 +6,15 @@
 <head>         
     <meta charset="utf-8">         
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">         
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             
     <title></title>
     <meta name="description" content="">         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">         
-    <link rel="stylesheet"href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url(); ?>assets/css/style.css" />     
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url(); ?>assets/css/style.css" />
+
 </head>     
 
 <body>

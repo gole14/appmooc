@@ -1,12 +1,21 @@
-<div class="blog">
+	<div class="blog">
 	<div id="blog_text">
-		<?php echo 'Hola';?>
+		<h2><?php echo 'Mis cursos'; ?></h2>
+
+			<?php foreach ($cpu as $cpu_item): ?>
+				<div class="bg-info">
+			        <h3><?php echo $cpu_item['nombre']; ?></h3>
+			        <div class="main">
+			                <?php echo $cpu_item['fechayhora']; ?>
+			        </div>
+			    </div>
+			<?php endforeach; ?>
 	</div>
 </div>
 <div id="sidebar" class="sidebar">
 	<!--Sidebar-->
 	<div class="sidebar-page">
-		<span class="sidebar-title">FormGet Tutorials</span>
+		<span class="sidebar-title">Cursos disponibles</span>
 		<div class="feature-menu">
 		<ul>
 			<li><a href="<?php echo base_url('main/php'); ?>">PHP</a></li>

@@ -148,6 +148,20 @@ class User_model extends CI_Model {
         return true;
     } 
 
+    function getUsersList(){
+        $this->load->database();
+            $usuarios = $this->db->get('users');
+            return $usuarios->result();
+    }
 
-
+    function getUserCourses($email){
+            $q = $this->db->get_where('usuarios_cursos', array('email' => $email));  
+        if($this->db->affected_rows() > 0){
+            $row = $q->result_array();
+            return $row;
+        }else{
+            error_log('no user found getUserInfo('.$email.')');
+            return false;
+        }
+    }
 }//CLASS END
