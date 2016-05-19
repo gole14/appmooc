@@ -382,7 +382,7 @@ class Main extends CI_Controller {
 
         function insert_ctrl(){
             $data = array(
-                'idusuario' => $this->input->post('idusuario'),
+                'idusuario' => $this->session->userdata['id'],
                 'idcurso' => $this->input->post('idcurso')
                 );
                 //Transfering data to Model

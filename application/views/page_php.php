@@ -13,8 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<?php echo form_open('main/insert_ctrl'); ?>
 
-	<?php echo form_input(array('id' => 'idcurso', 'name' => "idcurso", 'value'=>set_value('idcurso',"1"))); ?><br />
-	<?php echo form_input(array('id' => 'idusuario', 'name' => 'idusuario', 'value'=>set_value('idusuario', $id))); ?><br />
+	<input type="hidden" value="1" name="idcurso">
 	
 	<?php echo form_submit(array('id' => 'submit', 'value' => 'Registrarse al curso')); ?>
 	<?php echo form_close(); ?><br/>
