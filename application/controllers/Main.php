@@ -28,7 +28,7 @@ class Main extends CI_Controller {
             $data = $this->session->userdata; 
             $data['cpu'] = $this->user_model->getUserCourses($this->session->userdata['email']);
             $this->load->view('header', $data);     
-            //$this->load->view('home_view', $data);     
+            $this->load->view('home_view');     
             $this->load->view('page_menu', $data); 
             //$this->load->view('cursosusuario', $data); 
             $this->load->view('footer');
@@ -249,7 +249,67 @@ class Main extends CI_Controller {
 
 
         function php() {
-           // $this->load->view('page_php');
+
+            $data = $this->session->userdata;
+
+            $this->load->view('header', $data);
+            $this->load->view('page_php');
+            $this->load->view('page_menu');
+            $this->load->view('footer');
+        }
+        function css() {
+
+            $data = $this->session->userdata;
+
+            $this->load->view('header', $data);
+            $this->load->view('page_css');
+            $this->load->view('page_menu');
+            $this->load->view('footer');
+        } 
+        function javascript() {
+
+            $data = $this->session->userdata;
+
+            $this->load->view('header', $data);
+            $this->load->view('page_javascript');
+            $this->load->view('page_menu');
+            $this->load->view('footer');
+        } 
+        function codeigniter() {
+
+            $data = $this->session->userdata;
+
+            $this->load->view('header', $data);
+            $this->load->view('page_codeigniter');
+            $this->load->view('page_menu');
+            $this->load->view('footer');
+        } 
+        function html5() {
+
+            $data = $this->session->userdata;
+
+            $this->load->view('header', $data);
+            $this->load->view('page_html5');
+            $this->load->view('page_menu');
+            $this->load->view('footer');
+        } 
+        function mysql() {
+
+            $data = $this->session->userdata;
+
+            $this->load->view('header', $data);
+            $this->load->view('page_mysql');
+            $this->load->view('page_menu');
+            $this->load->view('footer');
+        }  
+        function rails() {
+
+            $data = $this->session->userdata;
+
+            $this->load->view('header', $data);
+            $this->load->view('page_rails');
+            $this->load->view('page_menu');
+            $this->load->view('footer');
         } 
 
 
@@ -320,9 +380,23 @@ class Main extends CI_Controller {
             $this->pdf->Output("Lista de usuarios.pdf", 'I');
         }   
 
-        public function mostrarNoticias()
-        {
-                $data['cursos_inscrito'] = $this->User_model->getUserCourses($this->session->userdata['email']);
+        function insert_ctrl(){
+            $data = array(
+                'idusuario' => $this->input->post('idusuario'),
+                'idcurso' => $this->input->post('idcurso')
+                );
+                //Transfering data to Model
+                $this->user_model->form_insert($data);
+                $data['message'] = 'Data Inserted Successfully';
+                //Loading View
+                 /*front page*/
+                $data = $this->session->userdata; 
+                $data['cpu'] = $this->user_model->getUserCourses($this->session->userdata['email']);
+                $this->load->view('header', $data);     
+                $this->load->view('home_view');     
+                $this->load->view('page_menu', $data); 
+                //$this->load->view('cursosusuario', $data); 
+                $this->load->view('footer');
         }
 
 }

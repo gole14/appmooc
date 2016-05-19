@@ -1,17 +1,4 @@
-	<div class="blog">
-	<div id="blog_text">
-		<h2><?php echo 'Mis cursos'; ?></h2>
 
-			<?php foreach ($cpu as $cpu_item): ?>
-				<div class="bg-info">
-			        <h3><?php echo $cpu_item['nombre']; ?></h3>
-			        <div class="main">
-			                <?php echo $cpu_item['fechayhora']; ?>
-			        </div>
-			    </div>
-			<?php endforeach; ?>
-	</div>
-</div>
 <div id="sidebar" class="sidebar">
 	<!--Sidebar-->
 	<div class="sidebar-page">
@@ -19,13 +6,12 @@
 		<div class="feature-menu">
 		<ul>
 			<li><a href="<?php echo base_url('main/php'); ?>">PHP</a></li>
-			<li><a href="css">CSS</a></li>
-			<li><a href="javascript">Javascript</a></li>
-			<li><a href="codeigniter">CodeIgniter</a></li>
-			<li><a href="html5">HTML5</a></li>
-			<li><a href="mysql">MySQL</a></li>
-			<li><a href="mailget">Mailget</a></li>
-			<li><a href="others">Others</a></li>
+			<li><a href="<?php echo base_url('main/css'); ?>">CSS</a></li>
+			<li><a href="<?php echo base_url('main/javascript'); ?>">Javascript</a></li>
+			<li><a href="<?php echo base_url('main/codeigniter'); ?>">CodeIgniter</a></li>
+			<li><a href="<?php echo base_url('main/html5'); ?>">HTML5</a></li>
+			<li><a href="<?php echo base_url('main/mysql'); ?>">MySQL</a></li>
+			<li><a href="<?php echo base_url('main/rails'); ?>">Ruby on Rails</a></li>
 		</ul>
 	</div>
 </div>

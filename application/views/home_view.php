@@ -4,11 +4,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title> Login - Area privada</title>
+	<title>Area privada</title>
 </head>
 <body>
-	<h1>Home</h1>
-	<h2>Welcome <?php echo $email; ?>! </h2>
-	<a href="<?php echo base_url('main/logout/'); ?>">Logout</a>
+<div class="blog">
+	<div id="blog_text">
+		<h1><?php echo 'Mis cursos'; ?></h1>
+
+			<?php foreach ($cpu as $cpu_item): ?>
+				<button type="button" class="btn btn-default btn-lg btn-block">
+			        <h3><?php echo $cpu_item['nombre']; ?></h3>
+			        <div class="main">
+			                <?php echo $cpu_item['fechayhora']; ?>
+			        </div>
+			    </button>
+			<?php endforeach; ?>
+	</div>
+</div>
+
+
 </body>
 </html>

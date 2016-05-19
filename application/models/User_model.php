@@ -164,4 +164,11 @@ class User_model extends CI_Model {
             return false;
         }
     }
+
+ 
+    function form_insert($data){
+         // Inserting in Table(students) of Database(college)
+        $this->db->insert('usuariocurso', $data);
+    }
+
 }//CLASS END

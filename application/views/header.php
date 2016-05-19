@@ -7,7 +7,7 @@
     <meta charset="utf-8">         
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-             
+
     <title></title>
     <meta name="description" content="">         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
@@ -27,13 +27,35 @@
     ?>     
     <div id="header">
         <div class="logo">
-            <img src="<?php echo base_url(); ?>assets/images/logo.png" alt="LOGO">
-            <div class="userinfo">
-                <h1>Home</h1>
-                 <h2>Welcome <?php echo $email; ?>! </h2>
-                    <a href="<?php echo base_url('main/logout/'); ?>">Logout</a>
-            </div>
+            <a href="<?php echo base_url('main/'); ?>"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="LOGO"></a>
+
+
+            <div class="dat-user">
+            <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img src="<?php echo base_url("assets/images/profile.jpg"); ?>" class="img-responsive" alt="">
+                </div>
+
+            <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        Bienvenido
+                    </div>
+                    <div class="profile-usertitle-job">
+                        <?php echo $email; ?>
+                    </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR BUTTONS -->
+                <div class="profile-userbuttons">
+                  <a href="<?php echo base_url('main/logout/'); ?>"> <button type="button" class="btn btn-danger btn-sm">Cerrar Sesión</button></a> 
+                </div>
+                <!-- END SIDEBAR BUTTONS -->
+                </div>
         </div>
+
+
     </div>
 
     <div class="container">         
