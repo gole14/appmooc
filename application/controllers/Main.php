@@ -20,7 +20,7 @@ class Main extends CI_Controller {
         public function index()
     {   
             if(empty($this->session->userdata['email'])){
-                redirect(site_url().'Main/login/');
+                redirect(site_url().'main/login/');
             }
 
             //$data['title'] = 'Mis cursos';            
