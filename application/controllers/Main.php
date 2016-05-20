@@ -20,7 +20,7 @@ class Main extends CI_Controller {
         public function index()
     {   
             if(empty($this->session->userdata['email'])){
-                redirect(site_url().'main/login/');
+                redirect(site_url().'Main/login/');
             }
 
             //$data['title'] = 'Mis cursos';            
@@ -49,7 +49,7 @@ class Main extends CI_Controller {
             }else{
                 if($this->user_model->isDuplicate($this->input->post('email'))){
                     $this->session->set_flashdata('flash_message', 'Este correo electrónico ya ha sido registrado');
-                    redirect(site_url().'Main/login');
+                    redirect(site_url().'main/login');
                 }else{
                     $clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
                     $id = $this->user_model->insertUser($clean);
