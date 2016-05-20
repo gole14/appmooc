@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class main extends CI_Controller {
+class Main extends CI_Controller {
     
     public $status;
     public $roles;
@@ -49,7 +49,7 @@ class main extends CI_Controller {
             }else{
                 if($this->user_model->isDuplicate($this->input->post('email'))){
                     $this->session->set_flashdata('flash_message', 'Este correo electrónico ya ha sido registrado');
-                    redirect(site_url().'main/login');
+                    redirect(site_url().'Main/login');
                 }else{
                     $clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
                     $id = $this->user_model->insertUser($clean);
