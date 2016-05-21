@@ -15,7 +15,7 @@
       <?php echo form_error('lastname');?>
     </div>
     <div class="form-group">
-      <?php echo form_input(array('name'=>'email', 'id'=> 'email', 'laceholder'=>'Correo electrónico', 'class'=>'form-control', 'value'=> set_value('email'))); ?>
+      <?php echo form_input(array('name'=>'email', 'id'=> 'email', 'placeholder'=>'Correo electrónico', 'class'=>'form-control', 'value'=> set_value('email'))); ?>
       <?php echo form_error('email');?>
     </div>
     <?php echo form_submit(array('value'=>'Registro', 'class'=>'btn btn-lg btn-primary btn-block')); ?>
