@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>Area privada</title>
 </head>
 <body>
+<div class="col-lg-4 col-lg-offset-4">
 <div class="blog">
 	<div id="blog_text">
 		<h1><?php echo 'Mis cursos'; ?></h1>
@@ -20,6 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    </button>
 			<?php endforeach; ?>
 	</div>
+</div>
 </div>
 
 
