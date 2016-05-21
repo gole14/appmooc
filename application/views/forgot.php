@@ -2,7 +2,7 @@
     <h2>¿Olvidaste tu contraseña?</h2>
     <p>Por favor ingrese su correo electrónico, ahí se enviarán instrucciones para reestablecer la contraseña</p>
     <?php $fattr = array('class' => 'form-signin');
-         echo form_open(site_url().'main/forgot/', $fattr); ?>
+         echo form_open(site_url().'/main/forgot/', $fattr); ?>
     <div class="form-group">
       <?php echo form_input(array(
           'name'=>'email', 

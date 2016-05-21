@@ -20,7 +20,8 @@ class Main extends CI_Controller {
         public function index()
     {   
             if(empty($this->session->userdata['email'])){
-                redirect(site_url().'main/login/');
+                //redirect(site_url().'main/login/');
+                redirect('main/login');
             }
 
             //$data['title'] = 'Mis cursos';            
@@ -49,13 +50,13 @@ class Main extends CI_Controller {
             }else{
                 if($this->user_model->isDuplicate($this->input->post('email'))){
                     $this->session->set_flashdata('flash_message', 'Este correo electrónico ya ha sido registrado');
-                    redirect(site_url().'main/login');
+                    redirect(().'main/login');
                 }else{
                     $clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
                     $id = $this->user_model->insertUser($clean);
                     $token = $this->user_model->insertToken($id);
                     $qstring = base64_encode($token);
-                    $url = site_url() . 'main/complete/token/' . $qstring;
+                    $url = site_url() . '/main/complete/token/' . $qstring;
                     $link = '<a href="' . $url . '">' . $url . '</a>'; 
                     $message = '';
                     $message .= '<strong>You have signed up with our website</strong><br>';
@@ -77,7 +78,7 @@ class Main extends CI_Controller {
             
             if(!$user_info){
                 $this->session->set_flashdata('flash_message', 'Token is invalid or expired');
-                redirect(site_url().'main/login');
+                redirect(().'main/login');
             }            
             $data = array(
                 'firstName'=> $user_info->first_name, 
@@ -109,7 +110,7 @@ class Main extends CI_Controller {
                 
                 if(!$userInfo){
                     $this->session->set_flashdata('flash_message', 'Ocurrió un problema al actualizar los registros.');
-                    redirect(site_url().'main/login');
+                    redirect(().'main/login');
                 }
                 
                 unset($userInfo->password);
@@ -117,7 +118,7 @@ class Main extends CI_Controller {
                 foreach($userInfo as $key=>$val){
                     $this->session->set_userdata($key, $val);
                 }
-                redirect(site_url().'main/');
+                redirect(().'main/');
                 
             }
         }
@@ -144,12 +145,12 @@ class Main extends CI_Controller {
                         
                         if(!$userInfo){
                             $this->session->set_flashdata('flash_message', 'The login was unsucessful');
-                            redirect(site_url().'main/login');
+                            redirect(().'main/login');
                         }                
                         foreach($userInfo as $key=>$val){
                             $this->session->set_userdata($key, $val);
                         }
-                        redirect(site_url().'main/');
+                        redirect(().'main/');
                     }
                     
                 }
@@ -157,7 +158,7 @@ class Main extends CI_Controller {
         public function logout()
         {
             $this->session->sess_destroy();
-            redirect(site_url().'main/login/');
+            redirect(().'main/login/');
         }
 
         public function bk(){
@@ -180,12 +181,12 @@ class Main extends CI_Controller {
                 
                 if(!$userInfo){
                     $this->session->set_flashdata('flash_message', 'No podemos encontrar esa dirección de correo.');
-                    redirect(site_url().'main/login');
+                    redirect(().'main/login');
                 }   
                 
                 if($userInfo->status != $this->status[1]){ //if status is not approved
                     $this->session->set_flashdata('flash_message', 'La cuenta aún no se a confirmado');
-                    redirect(site_url().'main/login');
+                    redirect(().'main/login');
                 }
                 
                 //build token 
@@ -214,7 +215,7 @@ class Main extends CI_Controller {
             
             if(!$user_info){
                 $this->session->set_flashdata('flash_message', 'Token inválido o expirado.');
-                redirect(site_url().'main/login');
+                redirect(().'main/login');
             }            
             $data = array(
                 'firstName'=> $user_info->first_name, 
@@ -243,7 +244,7 @@ class Main extends CI_Controller {
                 }else{
                     $this->session->set_flashdata('flash_message', 'Tu contraseña ha sido restablecida');
                 }
-                redirect(site_url().'main/login');                
+                redirect(().'main/login');                
             }
         }
 

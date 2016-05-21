@@ -25,6 +25,6 @@
 </div>
 	<!--/Sidebar-->
 <div class="sidebar-banner">
-	<a href="#"><img src="<?php echo base_url(); ?>assets/images/banner.png" alt=""> </a>
+	<a href="#"><img src="<?php echo base_url('assets/images/banner.png'); ?>" alt=""> </a
 </div>
 </div>
