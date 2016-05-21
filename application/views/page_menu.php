@@ -5,13 +5,13 @@
 		<span class="sidebar-title">Cursos disponibles</span>
 		<div class="feature-menu">
 		<ul>
-			<li><a href="<?php echo base_url('main/php'); ?>">PHP</a></li>
-			<li><a href="<?php echo base_url('main/css'); ?>">CSS</a></li>
-			<li><a href="<?php echo base_url('main/javascript'); ?>">Javascript</a></li>
-			<li><a href="<?php echo base_url('main/codeigniter'); ?>">CodeIgniter</a></li>
-			<li><a href="<?php echo base_url('main/html5'); ?>">HTML5</a></li>
-			<li><a href="<?php echo base_url('main/mysql'); ?>">MySQL</a></li>
-			<li><a href="<?php echo base_url('main/rails'); ?>">Ruby on Rails</a></li>
+			<li><a href="<?php echo site_url('main/php'); ?>">PHP</a></li>
+			<li><a href="<?php echo site_url('main/css'); ?>">CSS</a></li>
+			<li><a href="<?php echo site_url('main/javascript'); ?>">Javascript</a></li>
+			<li><a href="<?php echo site_url('main/codeigniter'); ?>">CodeIgniter</a></li>
+			<li><a href="<?php echo site_url('main/html5'); ?>">HTML5</a></li>
+			<li><a href="<?php echo site_url('main/mysql'); ?>">MySQL</a></li>
+			<li><a href="<?php echo site_url('main/rails'); ?>">Ruby on Rails</a></li>
 		</ul>
 	</div>
 </div>
