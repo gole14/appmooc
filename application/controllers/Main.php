@@ -50,7 +50,7 @@ class Main extends CI_Controller {
             }else{
                 if($this->user_model->isDuplicate($this->input->post('email'))){
                     $this->session->set_flashdata('flash_message', 'Este correo electrónico ya ha sido registrado');
-                    redirect(().'main/login');
+                    redirect(.'main/login');
                 }else{
                     $clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
                     $id = $this->user_model->insertUser($clean);
