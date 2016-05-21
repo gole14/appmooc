@@ -49,7 +49,7 @@
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
                 <div class="profile-userbuttons">
-                  <a href="<?php echo base_url('main/logout/'); ?>"> <button type="button" class="btn btn-danger btn-sm">Cerrar Sesión</button></a> 
+                  <a href="<?php echo site_url('main/logout/'); ?>"> <button type="button" class="btn btn-danger btn-sm">Cerrar Sesión</button></a> 
                 </div>
                 <!-- END SIDEBAR BUTTONS -->
                 </div>
