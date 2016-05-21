@@ -193,7 +193,7 @@ class Main extends CI_Controller {
                 
                 $token = $this->user_model->insertToken($userInfo->id);                    
                 $qstring = base64_encode($token);                    
-                $url = site_url() . 'main/reset_password/token/' . $qstring;
+                $url = site_url() . '/main/reset_password/token/' . $qstring;
                 $link = '<a href="' . $url . '">' . $url . '</a>'; 
                 
                 $message = '';                     
