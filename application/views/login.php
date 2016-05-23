@@ -1,10 +1,10 @@
-<div class="col-md-3 col-md-push-6">
+<div class="col-md-7 col-md-push-6">
 </br>
 </br>
 </br>
 <img src="<?php echo base_url(); ?>assets/images/description.jpg" alt=";)" class="img-rounded img-responsive">
 </div>
-<div class="col-md-5 col-md-pull-2">
+<div class="col-md-5 col-md-pull-6">
     <h2>  Iniciar sesión</h2>
     <?php $fattr = array('class' => 'form-signin');
          echo form_open(site_url().'/main/login/', $fattr); ?>

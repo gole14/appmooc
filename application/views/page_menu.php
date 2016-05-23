@@ -1,4 +1,3 @@
-
 <div id="sidebar" class="sidebar">
 	<!--Sidebar-->
 	<div class="sidebar-page">
