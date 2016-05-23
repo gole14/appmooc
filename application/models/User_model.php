@@ -171,12 +171,12 @@ class User_model extends CI_Model {
         $this->db->insert('usuariocurso', $data);
     }
 
-    function check_db($data){
-        if (empty($this->db->get_where('usuarios_cursos', array('id' => $data['idusuario'], 'idcurso' => $data['idcurso'])))) {
-            return '';
-        }else{
-            return 'x';
-        }
-    }
+    //function check_db($data){
+      //  if (empty($this->db->get_where('usuarios_cursos', array('id' => $data['idusuario'], 'idcurso' => $data['idcurso'])))) {
+           // return '';
+        //}else{
+          //  return 'x';
+        //}
+    //}
 
 }//CLASS END
