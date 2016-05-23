@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    </button>
 			<?php endforeach; ?>
 			<?php else: ?>
-				<h3><?php echo AUN NO TE HAS INSCRITO A NINGUN CURSO ?></h3>
+				<h3><?php echo "AUN NO TE HAS INSCRITO A NINGUN CURSO" ?></h3>
 			<?php endif; ?>
 		
 	</div>
