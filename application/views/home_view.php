@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div id="blog_text">
 		<h1><?php echo 'Mis cursos'; ?></h1>
 
-		<?php if(!empty($cpu)):
+		<?php if(!empty($cpu)): ?>
 			<?php foreach ($cpu as $cpu_item): ?>
 				<button type="button" class="btn btn-default btn-lg btn-block">
 			        <h3><?php echo $cpu_item['nombre']; ?></h3>
@@ -22,8 +22,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<?php endforeach; ?>
 			else:
 				<h3><?php echo $cpu_item['nombre']; ?></h3>
-			endif;
-		?>
+			<?php endif; ?>
+		
 	</div>
 </div>
 
