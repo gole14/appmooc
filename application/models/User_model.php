@@ -155,13 +155,13 @@ class User_model extends CI_Model {
     }
 
     function getUserCourses($email){
-            $q = $this->db->get_where('usuarios_cursos', array('email' => $email));  
+        $q = $this->db->get_where('usuarios_cursos', array('email' => $email));  
         if($this->db->affected_rows() > 0){
             $row = $q->result_array();
             return $row;
         }else{
-            error_log('no user found getUserInfo('.$email.')');
-            return false;
+            $error = $this->db->error();
+            return $error;
         }
     }
 

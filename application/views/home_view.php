@@ -7,11 +7,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>Area privada</title>
 </head>
 <body>
-<div class="col-lg-4 col-lg-offset-4">
 <div class="blog">
 	<div id="blog_text">
 		<h1><?php echo 'Mis cursos'; ?></h1>
 
+		<?php if(!empty($cpu)):
 			<?php foreach ($cpu as $cpu_item): ?>
 				<button type="button" class="btn btn-default btn-lg btn-block">
 			        <h3><?php echo $cpu_item['nombre']; ?></h3>
@@ -20,8 +20,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        </div>
 			    </button>
 			<?php endforeach; ?>
+			else:
+				<h3><?php echo $cpu_item['nombre']; ?></h3>
+			endif;
+		?>
 	</div>
-</div>
 </div>
 
 
