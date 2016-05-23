@@ -2,7 +2,7 @@
 </br>
 </br>
 </br>
-<img src="<?php echo base_url(); ?>assets/images/description.jpg" alt=";)" class="img-rounded">
+<img src="<?php echo base_url(); ?>assets/images/description.jpg" alt=";)" class="img-rounded img-responsive">
 </div>
 <div class="col-md-5 col-md-pull-2">
     <h2>  Iniciar sesión</h2>
