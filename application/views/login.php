@@ -24,7 +24,7 @@
     <?php echo form_close(); ?>
     <p>¿No tienes una cuenta? <a href="<?php echo site_url();?>/main/register">Haz click aquí para crear una.</a></p>
     <p>Click <a href="<?php echo site_url();?>/main/forgot">aquí</a> si olvidaste tu contraseña.</p>
-    <p class="lead">El Instituto Tecnológico de Colima te ofrece una nueva herramienta de aprendizaje, los MOOCs (Cursos masivos en línea). En esta página podrás encontrar diferentes cursos para reforzar tus conocimientos.
+    <p class="lead text-justify">El Instituto Tecnológico de Colima te ofrece una nueva herramienta de aprendizaje, los MOOCs (Cursos masivos en línea). En esta página podrás encontrar diferentes cursos para reforzar tus conocimientos.
 Para tener acceso a los cursos es necesario suscribirse a uno, y de esta manera, los alumnos podrán obtener créditos o puntos extras por la culminación de los cursos impartidos dentro de la plataforma.</p>
 
 </div>
