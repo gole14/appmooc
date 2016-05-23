@@ -20,8 +20,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        </div>
 			    </button>
 			<?php endforeach; ?>
-			else:
-				<h3><?php echo $cpu_item['nombre']; ?></h3>
+			<?php else: ?>
+				<h3><?php echo AUN NO TE HAS INSCRITO A NINGUN CURSO ?></h3>
 			<?php endif; ?>
 		
 	</div>
