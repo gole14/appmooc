@@ -391,7 +391,7 @@ class Main extends CI_Controller {
                 $data['message'] = 'Data Inserted Successfully';
                 //Loading View
                  /*front page*/
-                $data = $this->session->userdata; 
+                $data = $this->session->userdata;
                 $data['cpu'] = $this->user_model->getUserCourses($this->session->userdata['email']);
                 $this->load->view('header', $data);     
                 $this->load->view('home_view');     

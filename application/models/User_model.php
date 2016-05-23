@@ -161,7 +161,7 @@ class User_model extends CI_Model {
             return $row;
         }else{
             $error = $this->db->error();
-            return $error;
+            return '';
         }
     }
 
