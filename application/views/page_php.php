@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="blog">
 	<?php if ($this->session->flashdata('message')) { ?>
     <div class="alert alert-success fade in">
-        <?php echo $data['message']; ?>
+        <?php echo "YA TE HABIAS INSCRITO A ESTE CURSO D;" ?>
     </div>
     <?php } ?>
 
