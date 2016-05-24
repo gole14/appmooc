@@ -395,7 +395,6 @@ class Main extends CI_Controller {
                 $this->load->view('header', $data);     
                 $this->load->view('home_view');     
                 $this->load->view('page_menu', $data); 
-                //$this->load->view('cursosusuario', $data); 
                 $this->load->view('footer');
 
         }
