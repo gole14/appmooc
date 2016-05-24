@@ -166,10 +166,17 @@ class User_model extends CI_Model {
     }
 
     function form_insert($data){
-         // Inserting in Table(students) of Database(college)
-        if( ! $this->db->insert('usuariocurso', $data)){
-            $error = $this->db->error();
-            echo phpinfo();
+
+
+        $q = $this->db->get_where('usuariocurso', array('idcurso' => $data['idcurso'], 'idusuario' => $data['idusuario']));
+
+        if ($this->db->affected_rows() > 0) {
+            return '';   
+        }else{
+            // Inserting in Table(students) of Database(college)
+            $this->db->insert('usuariocurso', $data);
         }
+
+        
     }
 }//CLASS END
