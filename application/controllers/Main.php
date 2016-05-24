@@ -388,16 +388,17 @@ class Main extends CI_Controller {
                 //Transfering data to Model
                 $check = $this->user_model->form_insert($data);
                 if(empty($check)){
-                $data['message'] = 'Data Inserted Successfully';
-                $data = $this->session->userdata;
-                $data['cpu'] = $this->user_model->getUserCourses($this->session->userdata['email']);
-                $this->load->view('header', $data);     
-                $this->load->view('home_view');     
-                $this->load->view('page_menu', $data); 
-                $this->load->view('footer');
+                    
+                    $data['message'] = 'Data Inserted Unsuccessfully';
+                
+                 }else{
+                    $data = $this->session->userdata;
+                    $data['cpu'] = $this->user_model->getUserCourses($this->session->userdata['email']);
+                    $this->load->view('header', $data);     
+                    $this->load->view('home_view');     
+                    $this->load->view('page_menu', $data); 
+                    $this->load->view('footer');
                  }
-                //Loading View
-                 /*front page*/
         }
 
 }
