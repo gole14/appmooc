@@ -167,7 +167,7 @@ class User_model extends CI_Model {
 
     function form_insert($data){
          // Inserting in Table(students) of Database(college)
-        if(!$this->db->insert('usuariocurso', $data)){
+        if( ! $this->db->insert('usuariocurso', $data)){
             $error = $this->db->error();
             return $error;
         }
