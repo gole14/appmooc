@@ -248,7 +248,6 @@ class Main extends CI_Controller {
             }
         }
 
-
         function php() {
 
             $data = $this->session->userdata;
@@ -387,8 +386,6 @@ class Main extends CI_Controller {
                 'idcurso' => $this->input->post('idcurso')
                 );
                 //Transfering data to Model
-            //if (!empty($this->user_model->check_db($data))) {
-                # code...
                 $this->user_model->form_insert($data);
                 $data['message'] = 'Data Inserted Successfully';
                 //Loading View
@@ -400,7 +397,7 @@ class Main extends CI_Controller {
                 $this->load->view('page_menu', $data); 
                 //$this->load->view('cursosusuario', $data); 
                 $this->load->view('footer');
-            //}
+
         }
 
 }
