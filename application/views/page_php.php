@@ -19,6 +19,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php echo form_close(); ?><br/>
 </div>
 
+<?php
+    if ($this->session->flashdata('message')) {
+    ?>
+    <div class="message flash">
+        <?php echo $this->session->flashdata('message'); ?>
+    </div>
+    <?php
+    }
+?>
 
 </body>
 </html>

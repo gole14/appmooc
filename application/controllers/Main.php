@@ -390,6 +390,7 @@ class Main extends CI_Controller {
                 if(empty($check)){
                     
                     $data = $this->session->userdata;
+                    $this->session->set_flashdata('message', 'Ya estabas inscrito a este curso.');
 
                     $this->load->view('header', $data);
                     $this->load->view('page_php');
