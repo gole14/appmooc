@@ -389,7 +389,12 @@ class Main extends CI_Controller {
                 $check = $this->user_model->form_insert($data);
                 if(empty($check)){
                     
-                    $data['message'] = 'Data Inserted Unsuccessfully';
+                    $data = $this->session->userdata;
+
+                    $this->load->view('header', $data);
+                    $this->load->view('page_php');
+                    $this->load->view('page_menu');
+                    $this->load->view('footer');
                 
                  }else{
                     $data = $this->session->userdata;
