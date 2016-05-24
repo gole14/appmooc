@@ -169,7 +169,7 @@ class User_model extends CI_Model {
          // Inserting in Table(students) of Database(college)
         if( ! $this->db->insert('usuariocurso', $data)){
             $error = $this->db->error();
-            return $error;
+            echo phpinfo();
         }
     }
 }//CLASS END
