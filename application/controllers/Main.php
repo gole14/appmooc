@@ -386,8 +386,9 @@ class Main extends CI_Controller {
                 'idcurso' => $this->input->post('idcurso')
                 );
                 //Transfering data to Model
-                $this->user_model->form_insert($data);
+                if(empty($this->user_model->form_insert($data))){
                 $data['message'] = 'Data Inserted Successfully';
+                }
                 //Loading View
                  /*front page*/
                 $data = $this->session->userdata;
