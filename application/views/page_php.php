@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="blog">
 	<?php if ($this->session->flashdata('message')) { ?>
     <div class="alert alert-success fade in">
-        <?php echo $this->session->flashdata('message'); ?>
+        <?php echo $data['message']; ?>
     </div>
     <?php } ?>
 
