@@ -7,6 +7,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <div class="blog">
+	<?php if ($this->session->flashdata('message')) { ?>
+    <div class="alert alert-success fade in">
+        <?php echo $this->session->flashdata('message'); ?>
+    </div>
+    <?php } ?>
+
+
 	<div id="blog_text">
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/kY5P9sZqFas" frameborder="0" allowfullscreen></iframe>
 	</div>
@@ -18,16 +25,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php echo form_submit(array('id' => 'submit', 'value' => 'Registrarse al curso')); ?>
 	<?php echo form_close(); ?><br/>
 </div>
-
-<?php
-    if ($this->session->flashdata('message')) {
-    ?>
-    <div class="alert alert-success fade in">
-        <?php echo $this->session->flashdata('message'); ?>
-    </div>
-    <?php
-    }
-?>
 
 </body>
 </html>
