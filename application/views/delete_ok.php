@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url(); ?>assets/css/style.css" />
 
-    <meta http-equiv="refresh" content="5;url=<?php site_url().'/main/admin' ?>">
+    <?php header( "refresh:5;url=site_url().'/main/admin'"); ?>
 
     
 
