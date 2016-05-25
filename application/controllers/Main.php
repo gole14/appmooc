@@ -155,7 +155,7 @@ class Main extends CI_Controller {
                         if($check1 === $check){
                             redirect('main/');
                         }else{
-                            reditect('main/admin');
+                            redirect('main/admin/');
                         }
                     }
                     
