@@ -9,6 +9,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="hero-unit">
 
+	<?php if($message == '1'): ?>
+		<div class="alert alert-danger" role="alert">
+        	<?php echo "Usuario eliminado correctamente" ?>
+    	</div>
+    <?php elseif($message =='2'): ?>
+    	<div class="alert alert-danger" role="alert">
+       		<?php echo "Ocurrió un error al eliminar el usuario" ?>
+    	</div>
+    <?php endif; ?>
+
+
 	<?php if(!empty($estu)): ?>
 	<table class="table">
 		  <thead>
@@ -46,7 +57,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				    	<?php echo $last_login ?>
 				    </th>
 				    <th>
-				    	<button type="button" class="btn btn-warning">Eliminar</button>
+				    	<?php echo form_open('main/insert_ctrl'); ?>
+							<input type="hidden" value="<?php echo $id ?>" name="idcurso">
+
+				    	<?php echo form_submit(array('value'=>'Eliminar', 'class'=>'btn btn-warning')); ?>
+				    	<?php echo form_close(); ?><br/>
 				    </th>
 				</tr>
 			<?php endforeach; ?>

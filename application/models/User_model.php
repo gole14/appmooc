@@ -176,8 +176,14 @@ class User_model extends CI_Model {
         }else{
             // Inserting in Table(students) of Database(college)
             $this->db->insert('usuariocurso', $data);
-        }
+        }        
+    }
 
-        
+    function deleteUser($id){
+        if($this->db->delete('users', $id)){
+            return true;
+        }else{
+            return false;
+        }
     }
 }//CLASS END
