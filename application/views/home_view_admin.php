@@ -9,11 +9,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="hero-unit">
 
-	<?php if($message == '1'): ?>
+	<?php if($data['message'] == '1'): ?>
 		<div class="alert alert-danger" role="alert">
         	<?php echo "Usuario eliminado correctamente" ?>
     	</div>
-    <?php elseif($message =='2'): ?>
+    <?php elseif($data['message'] =='2'): ?>
     	<div class="alert alert-danger" role="alert">
        		<?php echo "Ocurrió un error al eliminar el usuario" ?>
     	</div>
