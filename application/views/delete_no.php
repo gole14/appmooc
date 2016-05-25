@@ -1,0 +1,1 @@
+<?php echo "HUBO UN PROBLEMA AL ELIMINAR EL USUARIO"; ?>

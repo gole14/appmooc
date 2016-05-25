@@ -454,26 +454,18 @@ class Main extends CI_Controller {
             $checkDel = $this->user_model->deleteUser($this->input->post('id'));
             if($checkDel){
                 $data = $this->session->userdata;
-                $mensaje = '1';
 
                 if ($data['tipo'] === '1') {
 
-                    $data['estu'] = $this->user_model->getUsersList();
-                    
-                    $this->load->view('header', $data);
-                    $this->load->view('home_view_admin',$mensaje); 
-                    $this->load->view('footer');
+                    $this->load->view('delete_ok');
+                    redirect('main/admin');
+
             }else{
                 $data = $this->session->userdata;
-                $mensaje = '2';
-
                 if ($data['tipo'] === '1') {
 
-                    $data['estu'] = $this->user_model->getUsersList();
-                    
-                    $this->load->view('header', $data);
-                    $this->load->view('home_view_admin',$mensaje); 
-                    $this->load->view('footer');
+                    $this->load->view('delete_no');
+                    redirect('main/admin');
             }
 
         }
