@@ -150,7 +150,11 @@ class Main extends CI_Controller {
                         foreach($userInfo as $key=>$val){
                             $this->session->set_userdata($key, $val);
                         }
-                        redirect('main/');
+                        if(empty($userInfo['tipo'])){
+                            redirect('main/');
+                        }else{
+                            reditect('main/admin');
+                        }
                     }
                     
                 }
@@ -405,6 +409,10 @@ class Main extends CI_Controller {
                     $this->load->view('page_menu', $data); 
                     $this->load->view('footer');
                  }
+        }
+
+        function admin(){
+            echo phpinfo();
         }
 
 }
