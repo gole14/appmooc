@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>Area privada</title>
 </head>
 <body>
-<div class="blog">
+<div class="hero-unit">
 	<div id="blog_text">
 		<h1><?php echo 'Mis cursos'; ?></h1>
 
