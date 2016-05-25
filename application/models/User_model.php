@@ -94,7 +94,7 @@ class User_model extends CI_Model {
         $query = $this->db->get('users');
         if($query){
             $userInfo = $query->row();
-            $userInfo['tipo'] = '';
+            //$userInfo['tipo'] = '';
         }else{
             $this->load->library('Password');       
             $this->db->select('*');
@@ -102,7 +102,7 @@ class User_model extends CI_Model {
             $this->db->where('tipo IS NOT NULL');
             $query = $this->db->get('users');
             $userInfo = $query->row();
-            $userInfo['tipo'] = '1';       
+            //$userInfo['tipo'] = '1';       
         }
         if(!$this->password->validate_password($post['password'], $userInfo->password)){
             error_log('Unsuccessful login attempt('.$post['email'].')');
