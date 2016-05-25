@@ -7,19 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>Area privada</title>
 </head>
 <body>
-<div class="hero-unit">
-
-	<?php if($data['message'] == '1'): ?>
-		<div class="alert alert-danger" role="alert">
-        	<?php echo "Usuario eliminado correctamente" ?>
-    	</div>
-    <?php elseif($data['message'] =='2'): ?>
-    	<div class="alert alert-danger" role="alert">
-       		<?php echo "Ocurrió un error al eliminar el usuario" ?>
-    	</div>
-    <?php endif; ?>
-
-
+<div class="hero-unit"
+>
 	<?php if(!empty($estu)): ?>
 	<table class="table">
 		  <thead>
