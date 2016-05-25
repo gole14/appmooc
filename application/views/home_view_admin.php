@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				    	<?php echo $last_login ?>
 				    </th>
 				    <th>
-				    	<?php echo form_open('main/insert_ctrl'); ?>
+				    	<?php echo form_open('main/delete'); ?>
 							<input type="hidden" value="<?php echo $id ?>" name="idcurso">
 
 				    	<?php echo form_submit(array('value'=>'Eliminar', 'class'=>'btn btn-warning')); ?>
