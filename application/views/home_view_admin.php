@@ -23,22 +23,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		
 			<?php foreach ($estu as $estu_item): ?>
-				<th scope="row">
-					<?php $id = $estu_item->id; ?>
-			        <?php echo $id ?>	
-			    </th>
-			    <th>
-			    	<?php $email = $estu_item->email; ?>
-			    	<?php echo $email ?>
-			    </th>
-			    <th>
-			    	<?php $first_name = $estu_item->first_name; ?>
-			    	<?php echo $first_name ?>
-			    </th>
-			    <th>
-			    	<?php $last_login = $estu_item->last_login; ?>
-			    	<?php echo $last_login ?>
-			    </th>
+				<tr>
+					<th scope="row">
+						<?php $id = $estu_item->id; ?>
+				        <?php echo $id ?>	
+				    </th>
+				    <th>
+				    	<?php $email = $estu_item->email; ?>
+				    	<?php echo $email ?>
+				    </th>
+				    <th>
+				    	<?php $first_name = $estu_item->first_name; ?>
+				    	<?php echo $first_name ?>
+				    </th>
+				    <th>
+				    	<?php $last_login = $estu_item->last_login; ?>
+				    	<?php echo $last_login ?>
+				    </th>
+				</tr>
 			<?php endforeach; ?>
 			
 		</tbody>
