@@ -26,13 +26,17 @@ class Main extends CI_Controller {
 
             //$data['title'] = 'Mis cursos';            
             /*front page*/
-            $data = $this->session->userdata; 
-            $data['cpu'] = $this->user_model->getUserCourses($this->session->userdata['email']);
-            $this->load->view('header', $data);     
-            $this->load->view('home_view');     
-            $this->load->view('page_menu', $data); 
-            //$this->load->view('cursosusuario', $data); 
-            $this->load->view('footer');
+            $data = $this->session->userdata;
+            if ($data['tipo'] != '1') {
+                $data['cpu'] = $this->user_model->getUserCourses($this->session->userdata['email']);
+                $this->load->view('header', $data);     
+                $this->load->view('home_view');     
+                $this->load->view('page_menu', $data); 
+                $this->load->view('footer');
+             }else{
+                redirect('main/admin/');
+             }
+            
 
     }
 
