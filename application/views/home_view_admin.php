@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="hero-unit">
 
-		<button type="button" class="btn btn-primary btn-lg btn-block" href="<?php echo site_url();?>/main/register">Crear cuenta de administrador</button>
+		<button type="button" class="btn btn-primary btn-lg btn-block" onclick="<?php echo site_url();?>/main/register">Crear cuenta de administrador</button>
 		<?php if(!empty($estu)): ?>
 	<table class="table">
 		  <thead>
