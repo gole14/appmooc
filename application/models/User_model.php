@@ -180,7 +180,9 @@ class User_model extends CI_Model {
     }
 
     function deleteUser($id){
-        if($this->db->delete('users', $id)){
+        $this->db->where('id', $id);
+
+        if($this->db->delete('users')){
             return true;
         }else{
             return false;
