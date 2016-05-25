@@ -8,21 +8,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <div class="hero-unit">
-	<div id="blog_text">
-		<h1><?php echo 'Mis cursos'; ?></h1>
+	<table class="table">
+		  <thead>
+		    <tr>
+		      <th>#</th>
+		      <th>First Name</th>
+		      <th>Last Name</th>
+		      <th>Username</th>
+		    </tr>
+		  </thead>
+		  	<tbody>
 
 		<?php if(!empty($estu)): ?>
 			<?php foreach ($estu as $estu_item): ?>
-				<button type="button" class="btn btn-default btn-lg btn-block">
+				<th scope="row">
 					<?php $id = $estu_item->id;; ?>
-			        <h3><?php echo $id ?></h3>	
-			    </button>
+			        <?php echo $id ?>	
+			    </th>
 			<?php endforeach; ?>
 			<?php else: ?>
 				<h3><?php echo "NO HAY NINGUN USUARIO REGISTRADO" ?></h3>
 			<?php endif; ?>
-		
-	</div>
+		</tbody>
+	</table>
 </div>
 
 
