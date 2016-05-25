@@ -418,7 +418,21 @@ class Main extends CI_Controller {
         }
 
         function admin(){
-            echo phpinfo();
+
+            if(empty($this->session->userdata['email'])){
+                //redirect(site_url().'main/login/');
+                redirect('main/login');
+            }
+
+            //$data['title'] = 'Mis cursos';            
+            /*front page*/
+            $data = $this->session->userdata;
+            if ($data['tipo'] === '1') {
+                echo phpinfo();
+            }else{
+                redirect('main/');
+            }
+            
         }
 
 }
