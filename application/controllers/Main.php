@@ -152,7 +152,7 @@ class Main extends CI_Controller {
                         }
                         $check1 = $userInfo->tipo;
                         $check = '1';
-                        if($check1 == $check){
+                        if($check1 != $check){
                             redirect('main/');
                         }else{
                             redirect('main/admin/');
