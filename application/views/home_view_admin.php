@@ -15,9 +15,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<?php foreach ($estu as $estu_item): ?>
 				<button type="button" class="btn btn-default btn-lg btn-block">
 			        <h3><?php echo $estu_item['id']; ?></h3>
-			        <div class="main">
-			                <?php echo $estu_item['email']; ?>
-			        </div>
 			    </button>
 			<?php endforeach; ?>
 			<?php else: ?>

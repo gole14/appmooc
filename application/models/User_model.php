@@ -149,9 +149,10 @@ class User_model extends CI_Model {
     } 
 
     function getUsersList(){
-        $this->load->database();
+            $this->load->database();
             $usuarios = $this->db->get('users');
-            return $usuarios->result();
+            $resultt = $usuarios->result();
+            return resultt;
     }
 
     function getUserCourses($email){
