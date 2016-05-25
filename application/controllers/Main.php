@@ -430,8 +430,6 @@ class Main extends CI_Controller {
             if ($data['tipo'] === '1') {
 
                 $data['estu'] = $this->user_model->getUsersList();
-                $message = "0";
-                
                 $this->load->view('header', $data);
                 $this->load->view('home_view_admin',$message); 
                 $this->load->view('footer');
@@ -455,11 +453,27 @@ class Main extends CI_Controller {
 
             $checkDel = $this->user_model->deleteUser($this->input->post('id'));
             if($checkDel){
+                $data = $this->session->userdata;
                 $data['message'] = '1';
-                $this->load->view('home_view_admin',$data);
+
+                if ($data['tipo'] === '1') {
+
+                    $data['estu'] = $this->user_model->getUsersList();
+                    
+                    $this->load->view('header', $data);
+                    $this->load->view('home_view_admin'); 
+                    $this->load->view('footer');
             }else{
+                $data = $this->session->userdata;
                 $data['message'] = '2';
-                $this->load->view('home_view_admin',$data);
+
+                if ($data['tipo'] === '1') {
+
+                    $data['estu'] = $this->user_model->getUsersList();
+                    
+                    $this->load->view('header', $data);
+                    $this->load->view('home_view_admin'); 
+                    $this->load->view('footer');
             }
 
         }
