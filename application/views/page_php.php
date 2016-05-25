@@ -8,8 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="blog">
 	<?php if ($this->session->flashdata('message')) { ?>
-    <div class="alert alert-danger" role="alert">
-        <?php echo "YA TE HABIAS INSCRITO A ESTE CURSO D;" ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo "YA ESTÁS INSCRITO A ESTE CURSO" ?>
     </div>
     <?php } ?>
 
