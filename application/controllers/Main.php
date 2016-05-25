@@ -432,7 +432,7 @@ class Main extends CI_Controller {
                 $data['estu'] = $this->user_model->getUsersList();
                 
                 $this->load->view('header', $data);
-                $this->load->view('home_view_admin'); 
+               // $this->load->view('home_view_admin'); 
                 $this->load->view('footer');
 
 
