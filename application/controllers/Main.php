@@ -428,7 +428,15 @@ class Main extends CI_Controller {
             /*front page*/
             $data = $this->session->userdata;
             if ($data['tipo'] === '1') {
-                echo phpinfo();
+
+                $data['estu'] = $this->user_model->getUsersList();
+                
+                $this->load->view('header', $data);
+                $this->load->view('home_view_admin'); 
+                $this->load->view('footer');
+
+
+
             }else{
                 redirect('main/');
             }
