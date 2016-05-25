@@ -39,11 +39,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				    </th>
 				    <th>
 				    	<?php $last_name = $estu_item->last_name; ?>
-				    	<?php echo $last_name ?>
+				    	<?php echo $last_login_name ?>
 				    </th>
 				    <th>
 				    	<?php $last_login = $estu_item->last_login; ?>
 				    	<?php echo $last_login ?>
+				    </th>
+				    <th>
+				    	<button type="button" class="btn btn-warning">Eliminar</button>
 				    </th>
 				</tr>
 			<?php endforeach; ?>
