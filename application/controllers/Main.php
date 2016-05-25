@@ -150,7 +150,8 @@ class Main extends CI_Controller {
                         foreach($userInfo as $key=>$val){
                             $this->session->set_userdata($key, $val);
                         }
-                        $check = $userdata->tipo;
+                        $user_data = $this->session->userdata;
+                        $check = $user_data->tipo;
                         if(empty($check)){
                             redirect('main/');
                         }else{
