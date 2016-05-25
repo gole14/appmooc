@@ -152,7 +152,7 @@ class User_model extends CI_Model {
             $this->load->database();
             $usuarios = $this->db->get('users');
             $resultt = $usuarios->result();
-            return resultt;
+            return $resultt;
     }
 
     function getUserCourses($email){
