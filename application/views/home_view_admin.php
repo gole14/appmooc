@@ -8,6 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <div class="hero-unit">
+
+	<?php if(!empty($estu)): ?>
 	<table class="table">
 		  <thead>
 		    <tr>
@@ -19,18 +21,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		  </thead>
 		  	<tbody>
 
-		<?php if(!empty($estu)): ?>
+		
 			<?php foreach ($estu as $estu_item): ?>
 				<th scope="row">
-					<?php $id = $estu_item->id;; ?>
+					<?php $id = $estu_item->id; ?>
 			        <?php echo $id ?>	
 			    </th>
+			    <th>
+			    	<?php $email = $estu_item->email; ?>
+			    	<?php echo $email ?>
+			    </th>
+			    <th>
+			    	<?php $first_name = $estu_item->first_name; ?>
+			    	<?php echo $first_name ?>
+			    </th>
+			    <th>
+			    	<?php $last_login = $estu_item->last_login; ?>
+			    	<?php echo $last_login ?>
+			    </th>
 			<?php endforeach; ?>
-			<?php else: ?>
-				<h3><?php echo "NO HAY NINGUN USUARIO REGISTRADO" ?></h3>
-			<?php endif; ?>
+			
 		</tbody>
 	</table>
+	<?php else: ?>
+				<h3><?php echo "NO HAY NINGUN USUARIO REGISTRADO" ?></h3>
+	<?php endif; ?>
 </div>
 
 
