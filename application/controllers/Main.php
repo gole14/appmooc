@@ -151,7 +151,7 @@ class Main extends CI_Controller {
                             $this->session->set_userdata($key, $val);
                         }
                         $check = $userdata->tipo;
-                        if(empty()){
+                        if(empty($check)){
                             redirect('main/');
                         }else{
                             reditect('main/admin');
