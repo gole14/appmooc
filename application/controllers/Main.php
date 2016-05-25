@@ -443,7 +443,7 @@ class Main extends CI_Controller {
             }
         }
 
-        function delete($id){
+        function delete(){
             if(empty($this->session->userdata['email'])){
                 //redirect(site_url().'main/login/');
                 redirect('main/login');

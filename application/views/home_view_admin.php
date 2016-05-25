@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				    </th>
 				    <th>
 				    	<?php echo form_open('main/delete'); ?>
-							<input type="input" value="<?php echo $id ?>" name="idcurso">
+							<input type="input" value="<?php echo $id ?>" name="id">
 
 				    	<?php echo form_submit(array('value'=>'Eliminar', 'class'=>'btn btn-warning')); ?>
 				    	<?php echo form_close(); ?><br/>
