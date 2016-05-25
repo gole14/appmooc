@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				    </th>
 				    <th>
 				    	<?php $last_name = $estu_item->last_name; ?>
-				    	<?php echo $last_login_name ?>
+				    	<?php echo $last_name ?>
 				    </th>
 				    <th>
 				    	<?php $last_login = $estu_item->last_login; ?>
