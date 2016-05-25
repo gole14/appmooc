@@ -449,9 +449,11 @@ class Main extends CI_Controller {
                 redirect('main/login');
             }
 
+
+
             $data = $this->session->userdata;
 
-            $checkDel = $this->user_model->deleteUser($id);
+            $checkDel = $this->user_model->deleteUser($this->input->post('idcurso'));
             if($checkDel){
                 $data['message'] = '1';
                 $this->load->view('home_view_admin',$data);
