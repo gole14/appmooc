@@ -13,10 +13,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<table class="table">
 		  <thead>
 		    <tr>
-		      <th>#</th>
-		      <th>First Name</th>
-		      <th>Last Name</th>
-		      <th>Username</th>
+		      <th>ID</th>
+		      <th>Email</th>
+		      <th>Nombre</th>
+		      <th>Apellido</th>
+		      <th>Último inicio de sesión</th>
 		    </tr>
 		  </thead>
 		  	<tbody>
@@ -35,6 +36,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				    <th>
 				    	<?php $first_name = $estu_item->first_name; ?>
 				    	<?php echo $first_name ?>
+				    </th>
+				    <th>
+				    	<?php $last_name = $estu_item->last_name; ?>
+				    	<?php echo $last_name ?>
 				    </th>
 				    <th>
 				    	<?php $last_login = $estu_item->last_login; ?>
