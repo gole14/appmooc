@@ -140,6 +140,8 @@ class Main extends CI_Controller {
                         
                         $post = $this->input->post();  
                         $clean = $this->security->xss_clean($post);
+
+                        
                         
                         $userInfo = $this->user_model->checkLogin($clean);
                         
