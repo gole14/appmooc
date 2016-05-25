@@ -452,7 +452,7 @@ class Main extends CI_Controller {
             $data = $this->session->userdata;
 
             $checkDel = $this->user_model->deleteUser($id);
-            if(checkDel){
+            if($checkDel){
                 $data['message'] = '1';
                 $this->load->view('home_view_admin',$data);
             }else{
