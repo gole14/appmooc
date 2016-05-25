@@ -100,7 +100,7 @@ class User_model extends CI_Model {
             $this->db->where('email', $post['email']);
             $this->db->where('tipo IS NOT NULL');
             $query = $this->db->get('users');
-            $userInfo = $query->row();      
+            $userInfo = $query->row();
         }
         if(!$this->password->validate_password($post['password'], $userInfo->password)){
             error_log('Unsuccessful login attempt('.$post['email'].')');
