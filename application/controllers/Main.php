@@ -458,6 +458,7 @@ class Main extends CI_Controller {
                 if ($data['tipo'] === '1') {
 
                     $this->load->view('delete_ok');
+                    sleep(5);
                     redirect('main/admin');
 
             }else{
