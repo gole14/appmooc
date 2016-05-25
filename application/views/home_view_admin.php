@@ -14,7 +14,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php if(!empty($estu)): ?>
 			<?php foreach ($estu as $estu_item): ?>
 				<button type="button" class="btn btn-default btn-lg btn-block">
-			        <h3><?php echo $estu_item['id']; ?></h3>
+					<?php $id = $this->estu_item->id; ?>
+			        <h3><?php echo $id ?></h3>	
 			    </button>
 			<?php endforeach; ?>
 			<?php else: ?>
