@@ -151,8 +151,8 @@ class Main extends CI_Controller {
                             $this->session->set_userdata($key, $val);
                         }
                         $check1 = $userInfo->tipo;
-                        $check = '';
-                        if($check1 === $check){
+                        $check = '1';
+                        if($check1 == $check){
                             redirect('main/');
                         }else{
                             redirect('main/admin/');
