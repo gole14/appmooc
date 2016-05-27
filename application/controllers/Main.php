@@ -29,6 +29,7 @@ class Main extends CI_Controller {
             $data = $this->session->userdata;
             if ($data['tipo'] != '1') {
                 $data['cpu'] = $this->user_model->getUserCourses($this->session->userdata['email']);
+                $data['cursitos'] = $this->user_model->get_courses();
                 $this->load->view('header', $data);     
                 $this->load->view('home_view');     
                 $this->load->view('page_menu', $data); 
@@ -261,7 +262,7 @@ class Main extends CI_Controller {
         function php() {
 
             $data = $this->session->userdata;
-
+            $data['cursitos'] = $this->user_model->get_courses();
             $this->load->view('header', $data);
             $this->load->view('page_php');
             $this->load->view('page_menu');
@@ -270,7 +271,7 @@ class Main extends CI_Controller {
         function css() {
 
             $data = $this->session->userdata;
-
+            $data['cursitos'] = $this->user_model->get_courses();
             $this->load->view('header', $data);
             $this->load->view('page_css');
             $this->load->view('page_menu');
@@ -279,7 +280,7 @@ class Main extends CI_Controller {
         function javascript() {
 
             $data = $this->session->userdata;
-
+            $data['cursitos'] = $this->user_model->get_courses();
             $this->load->view('header', $data);
             $this->load->view('page_javascript');
             $this->load->view('page_menu');
@@ -288,7 +289,7 @@ class Main extends CI_Controller {
         function codeigniter() {
 
             $data = $this->session->userdata;
-
+            $data['cursitos'] = $this->user_model->get_courses();
             $this->load->view('header', $data);
             $this->load->view('page_codeigniter');
             $this->load->view('page_menu');
@@ -297,7 +298,7 @@ class Main extends CI_Controller {
         function html5() {
 
             $data = $this->session->userdata;
-
+            $data['cursitos'] = $this->user_model->get_courses();
             $this->load->view('header', $data);
             $this->load->view('page_html5');
             $this->load->view('page_menu');
@@ -306,7 +307,7 @@ class Main extends CI_Controller {
         function mysql() {
 
             $data = $this->session->userdata;
-
+            $data['cursitos'] = $this->user_model->get_courses();
             $this->load->view('header', $data);
             $this->load->view('page_mysql');
             $this->load->view('page_menu');
@@ -315,7 +316,7 @@ class Main extends CI_Controller {
         function rails() {
 
             $data = $this->session->userdata;
-
+            $data['cursitos'] = $this->user_model->get_courses();
             $this->load->view('header', $data);
             $this->load->view('page_rails');
             $this->load->view('page_menu');
@@ -402,6 +403,7 @@ class Main extends CI_Controller {
                     $data = $this->session->userdata;
                     $this->session->set_flashdata('message', 'Ya estabas inscrito a este curso.');
                     $data['message'] = 'YA ESTABAS INSCRITO A ESTE CURSO';
+                    $data['cursitos'] = $this->user_model->get_courses();
                     $this->load->view('header', $data);
                     $this->load->view('page_php');
                     $this->load->view('page_menu');
@@ -410,6 +412,7 @@ class Main extends CI_Controller {
                  }else{
                     $data = $this->session->userdata;
                     $data['cpu'] = $this->user_model->getUserCourses($this->session->userdata['email']);
+                    $data['cursitos'] = $this->user_model->get_courses();
                     $this->load->view('header', $data);     
                     $this->load->view('home_view');     
                     $this->load->view('page_menu', $data); 
@@ -439,6 +442,88 @@ class Main extends CI_Controller {
             }else{
                 redirect('main/');
             }
+        }
+
+        function users_as_admin (){
+            if(empty($this->session->userdata['email'])){
+                //redirect(site_url().'main/login/');
+                redirect('main/login');
+            }
+
+            //$data['title'] = 'Mis cursos';            
+            /*front page*/
+            $data = $this->session->userdata;
+            if ($data['tipo'] === '1') {
+
+                $data['estu'] = $this->user_model->getUsersList();
+                $this->load->view('header', $data);
+                $this->load->view('admin_usuarios'); 
+                $this->load->view('footer');
+
+
+
+            }else{
+                redirect('main/');
+            }
+        }
+
+        function courses_as_admin (){
+            if(empty($this->session->userdata['email'])){
+                //redirect(site_url().'main/login/');
+                redirect('main/login');
+            }
+
+            //$data['title'] = 'Mis cursos';            
+            /*front page*/
+            $data = $this->session->userdata;
+            if ($data['tipo'] === '1') {
+
+                $data['curs'] = $this->user_model->getCoursesList();
+                $this->load->view('header', $data);
+                $this->load->view('admin_cursos'); 
+                $this->load->view('footer');
+
+
+
+            }else{
+                redirect('main/');
+            }
+        }
+
+        function admin_alta_de_curso(){
+            if(empty($this->session->userdata['email'])){
+                //redirect(site_url().'main/login/');
+                redirect('main/login');
+            }
+
+            //$data['title'] = 'Mis cursos';            
+            /*front page*/
+            $data = $this->session->userdata;
+            if ($data['tipo'] === '1') {
+
+                $this->form_validation->set_rules('nombre', 'Nombre', 'required');
+                $this->form_validation->set_rules('fechayhora', 'Fecha y hora', 'required');
+
+                if($this->form_validation->run() == FALSE){
+                    $this->load->view('header', $data);
+                    $this->load->view('admin_alta_curso');
+                     $this->load->view('footer');
+                }else{
+                    if($this->user_model->isDuplicate($this->input->post('email'))){
+                        $this->session->set_flashdata('flash_message', 'Este correo electrónico ya ha sido registrado');
+                        redirect('main/login');
+                    }else{
+                        $clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
+                        $id = $this->user_model->add_course($clean);
+                        redirect('main/courses_as_admin');
+
+                    };
+                }
+
+            }else{
+                redirect('main/');
+            }
+
         }
 
         function delete(){

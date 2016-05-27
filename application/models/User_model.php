@@ -155,6 +155,13 @@ class User_model extends CI_Model {
             return $resultt;
     }
 
+    function getCoursesList(){
+            $this->load->database();
+            $cursos = $this->db->get('curso');
+            $resulttt = $cursos->result();
+            return $resulttt;
+    }
+
     function getUserCourses($email){
         $q = $this->db->get_where('usuarios_cursos', array('email' => $email));  
         if($this->db->affected_rows() > 0){
@@ -187,5 +194,18 @@ class User_model extends CI_Model {
         }else{
             return false;
         }
+    }
+
+    function add_course($data){
+        $this->db->insert('curso', $data); 
+    }
+
+    function get_courses(){  
+        $this->load->database();    
+        $this->db->select('nombre');
+        $this->db->select('cl');
+        $query = $this->db->get('curso');
+        $cursitos = $query->result();
+        return $cursitos;
     }
 }//CLASS END

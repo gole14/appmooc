@@ -4,13 +4,21 @@
 		<span class="sidebar-title">Cursos disponibles</span>
 		<div class="feature-menu">
 		<ul>
-			<li><a href="<?php echo site_url('main/php'); ?>">PHP</a></li>
-			<li><a href="<?php echo site_url('main/css'); ?>">CSS</a></li>
-			<li><a href="<?php echo site_url('main/javascript'); ?>">Javascript</a></li>
-			<li><a href="<?php echo site_url('main/codeigniter'); ?>">CodeIgniter</a></li>
-			<li><a href="<?php echo site_url('main/html5'); ?>">HTML5</a></li>
-			<li><a href="<?php echo site_url('main/mysql'); ?>">MySQL</a></li>
-			<li><a href="<?php echo site_url('main/rails'); ?>">Ruby on Rails</a></li>
+
+			<?php if(!empty($cursitos)): ?>
+			<?php foreach ($cursitos as $curso): ?>
+
+
+				<?php $nombre = $curso->nombre; ?>
+				<?php $controlador = $curso->cl; ?>
+			    <li><a href="<?php echo site_url('main/'.$controlador); ?>"> <?php echo $nombre ?> </a></li>
+
+
+			<?php endforeach; ?>
+			<?php else: ?>
+				<h3><?php echo "AUN NO TE HAS INSCRITO A NINGUN CURSO" ?></h3>
+			<?php endif; ?>
+
 		</ul>
 	</div>
 </div>

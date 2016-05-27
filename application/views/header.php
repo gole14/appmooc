@@ -14,6 +14,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">         
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url(); ?>assets/css/style.css" />
+    <script src="<?php echo base_url(); ?>assets/javascript/jquery-2.2.4.min.js" ></script>
 
 </head>     
 
