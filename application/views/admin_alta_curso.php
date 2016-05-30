@@ -36,6 +36,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <?php echo form_input(array('name'=>'fechayhora', 'id'=> 'fechayhora', 'placeholder'=>'Fecha y hora (dd-mm-aa hh:mm:ss)', 'class'=>'form-control', 'value'=> set_value('fechayhora'))); ?>
               <?php echo form_error('fechayhora');?>
             </div>
+            <div class="form-group">
+              <?php echo form_input(array('name'=>'url_video', 'id'=> 'url_video', 'placeholder'=>'URL del video embebido de YouTube', 'class'=>'form-control', 'value'=> set_value('url_video'))); ?>
+              <?php echo form_error('fechayhora');?>
+            </div>
             <?php echo form_submit(array('value'=>'Dar de alta el curso', 'class'=>'btn btn-lg btn-primary btn-block')); ?>
             <?php echo form_close(); ?>
 
