@@ -600,7 +600,7 @@ class Main extends CI_Controller {
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
         } else {
-            echo 'Message has been sent';
+            echo 'Se ha enviado el enlace de confirmación al correo '.$correo;
         }
 
     }
