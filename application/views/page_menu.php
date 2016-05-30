@@ -15,7 +15,7 @@
 					$idc = $curso->idcurso; 
 
 				?>
-			    <li><a href="<?php echo site_url('main/cursounico'); ?>"> <?php echo $nombre ?> </a></li>
+			    <li><a href="<?php echo site_url('main/cursounico'); ?>"> <?php echo $nombre $url $idc ?> </a></li>
 
 
 			<?php endforeach; ?>
