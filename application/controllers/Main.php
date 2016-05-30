@@ -556,4 +556,18 @@ class Main extends CI_Controller {
     }
     }
 
+    function sendEmail(){
+        $this->load->library('email');
+        $this->email->from('code@igniter.com','Prueba');
+        $this->email->to('gole1407@gmail.com');
+
+        $this->email->subjet('Prueba');
+        $this->email->message('CORREO DE PRUEBA');
+        
+        if($this->send()){
+            echo "CORREO ENVIADO";
+        }else echo "CORREO NO ENVIADO";
+
+    }
+
 }
