@@ -564,7 +564,7 @@ class Main extends CI_Controller {
         $this->email->subject('Prueba');
         $this->email->message('CORREO DE PRUEBA');
         
-        if($this->send()){
+        if($this->email->send()){
             echo "CORREO ENVIADO";
         }else echo "CORREO NO ENVIADO";
 
