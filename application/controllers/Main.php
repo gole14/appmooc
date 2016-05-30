@@ -67,8 +67,13 @@ class Main extends CI_Controller {
                     $message = '';
                     $message .= '<strong>You have signed up with our website</strong><br>';
                     $message .= '<strong>Please click:</strong> ' . $link;
+                    $correo = $this->input->post('email');
 
-                    echo $message; //Send this in email.
+                    $datamail['message'] = $message;
+                    $datamail['correo'] = $correo;
+                    echo "Revisa tu correo electronico para confirmar"; //Send this in email.
+
+                    $this->sendEmail($datamail);
                     exit;
 
                 };
@@ -557,12 +562,14 @@ class Main extends CI_Controller {
     }
     }
 
-    function sendEmail(){
+    function sendEmail($datamail){
         //require  base_url('application/libraries/PHPMailer/PHPMailerAutoload.php');
         //include(APPPATH.'libraries/PHPMailer/PHPMailerAutoload.php');
         //require 'PHPMailerAutoload.php';
 
         require_once(APPPATH.'libraries/PHPMailer/PHPMailerAutoload.php');
+
+        $correo = $datamail->correo;
 
         $mail = new PHPMailer;
 
@@ -576,7 +583,7 @@ class Main extends CI_Controller {
 
         $mail->setFrom('10460316@itcolima.edu.mx', 'MOOC APP');
         //$mail->addReplyTo('moocapp.pw2@gmail.com', 'MOOC APP');
-        $mail->addAddress('gole1407@gmail.com');   // Add a recipient
+        $mail->addAddress($correo);   // Add a recipient
         //$mail->addCC('cc@example.com');
         //$mail->addBCC('bcc@example.com');
 
