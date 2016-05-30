@@ -270,7 +270,8 @@ class Main extends CI_Controller {
             $data['cursitos'] = $this->user_model->get_courses();
             $info = $this->user_model->get_data($idc);
             $data['idc'] = $idc;
-            $data['video'] = $info->url_video;
+            $videito = $info->url_video;
+            $data['video'] = $videito;
             $this->load->view('header', $data);
             $this->load->view('page_curso_unico');
             $this->load->view('page_menu');
