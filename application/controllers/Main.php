@@ -561,7 +561,7 @@ class Main extends CI_Controller {
         $this->email->from('code@igniter.com','Prueba');
         $this->email->to('gole1407@gmail.com');
 
-        $this->email->subjet('Prueba');
+        $this->email->subject('Prueba');
         $this->email->message('CORREO DE PRUEBA');
         
         if($this->send()){
