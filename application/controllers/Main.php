@@ -605,7 +605,7 @@ class Main extends CI_Controller {
         $bodyContent = '<h1>SEGUIMIENTO DE REGISTRO</h1>';
         $bodyContent .= '<p>'.$mensaje.'</p>';
 
-        $mail->Subject = 'Email from Localhost by gole';
+        $mail->Subject = 'Confirmacion de cuenta MOOC APP';
         $mail->Body    = $bodyContent;
 
         if(!$mail->send()) {
