@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 	<div id="blog_text">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/.<?php echo $video ?>" frameborder="0" allowfullscreen></iframe>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video ?>" frameborder="0" allowfullscreen></iframe>
 	</div>
 
 	<?php echo form_open('main/insert_ctrl'); ?>
