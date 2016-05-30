@@ -210,4 +210,13 @@ class User_model extends CI_Model {
         $cursitos = $query->result();
         return $cursitos;
     }
+
+    function get_data($id){
+        $this->db->where('idcurso',$id);
+        $this->db->select('url_video');
+        $query = $this->db->get('curso');
+        $cursel = $query->result_array();
+        return $cursel;
+
+    }
 }//CLASS END

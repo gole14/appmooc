@@ -265,9 +265,11 @@ class Main extends CI_Controller {
             }
         }
 
-        function cursounico(){
+        function cursounico($idc){
             $data = $this->session->userdata;
             $data['cursitos'] = $this->user_model->get_courses();
+            $data['video'] = $this->get_data($idc);
+            $data['idc'] = $idc;
             $this->load->view('header', $data);
             $this->load->view('page_curso_unico');
             $this->load->view('page_menu');
