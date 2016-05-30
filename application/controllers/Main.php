@@ -569,7 +569,7 @@ class Main extends CI_Controller {
 
         require_once(APPPATH.'libraries/PHPMailer/PHPMailerAutoload.php');
 
-        $correo = $datamail->correo;
+        $correo = $datamail['correo'];
 
         $mail = new PHPMailer;
 
