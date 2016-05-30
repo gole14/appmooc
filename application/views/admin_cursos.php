@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </th>
             <th>
               <?php echo form_open('main/deleteCurso'); ?>
-              <input type="hidden" value="<?php echo $idcurso ?>" name="idcurso">
+              <input type="submit" value="<?php echo $idcurso ?>" name="idcurso">
 
               <?php echo form_submit(array('value'=>'Eliminar', 'class'=>'btn btn-warning')); ?>
               <?php echo form_close(); ?><br/>
