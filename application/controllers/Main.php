@@ -568,11 +568,43 @@ class Main extends CI_Controller {
 
                     $this->load->view('delete_no');
                     redirect('main/admin');
-            }
+                }
 
+            }
         }
     }
+
+    function deleteCurso(){
+        if(empty($this->session->userdata['email'])){
+                //redirect(site_url().'main/login/');
+                redirect('main/login');
+            }
+
+
+
+            $data = $this->session->userdata;
+
+            $checkDel = $this->user_model->deleteUser($this->input->post('idcurso'));
+            if($checkDel){
+                $data = $this->session->userdata;
+
+                if ($data['tipo'] === '1') {
+
+                    $this->load->view('delete_ok');
+
+            }else{
+                $data = $this->session->userdata;
+                if ($data['tipo'] === '1') {
+
+                    $this->load->view('delete_no');
+                    redirect('main/admin');
+                }
+
+            }
+        }
+
     }
+    
 
     function sendEmail($datamail){
         //require  base_url('application/libraries/PHPMailer/PHPMailerAutoload.php');

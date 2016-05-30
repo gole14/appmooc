@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="hero-unit">
 	<div class="alert alert-success" role="alert">
-  		<strong>¡ÉXITO!</strong> EL USUARIO HA SIDO ELIMINADO DE LA BASE DE DATOS
+  		<strong>¡ÉXITO!</strong> EL REGISTRO HA SIDO ELIMINADO DE LA BASE DE DATOS
 </div>
 </div>
 </body>

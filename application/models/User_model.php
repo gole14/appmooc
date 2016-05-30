@@ -196,6 +196,16 @@ class User_model extends CI_Model {
         }
     }
 
+    function deleteCourse($id){
+        $this->db->where('idcurso', $id);
+
+        if($this->db->delete('curso')){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     function add_course($data){
         $this->db->insert('curso', $data); 
     }
