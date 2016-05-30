@@ -15,6 +15,7 @@ class Main extends CI_Controller {
             $this->status = $this->config->item('status');
             $this->roles = $this->config->item('roles');
 
+
         }
 
         public function index()
@@ -557,16 +558,42 @@ class Main extends CI_Controller {
     }
 
     function sendEmail(){
-        $this->load->library('email');
-        $this->email->from('code@igniter.com','Prueba');
-        $this->email->to('gole1407@gmail.com');
+        //require  base_url('application/libraries/PHPMailer/PHPMailerAutoload.php');
+        //include(APPPATH.'libraries/PHPMailer/PHPMailerAutoload.php');
+        //require 'PHPMailerAutoload.php';
 
-        $this->email->subject('Prueba');
-        $this->email->message('CORREO DE PRUEBA');
-        
-        if($this->email->send()){
-            echo "CORREO ENVIADO";
-        }else echo "CORREO NO ENVIADO";
+        require_once(APPPATH.'libraries/PHPMailer/PHPMailerAutoload.php');
+
+        $mail = new PHPMailer;
+
+        $mail->isSMTP();                            // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';             // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                     // Enable SMTP authentication
+        $mail->Username = 'moocapp.pw@gmail.com';          // SMTP username
+        $mail->Password = 'pass.word'; // SMTP password
+        $mail->SMTPSecure = 'tls';                  // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 587;                          // TCP port to connect to
+
+        $mail->setFrom('moocapp.pw@gmail.com', 'MOOC APP');
+        //$mail->addReplyTo('moocapp.pw@gmail.com', 'MOOC APP');
+        $mail->addAddress('gole1407@gmail.com');   // Add a recipient
+        //$mail->addCC('cc@example.com');
+        //$mail->addBCC('bcc@example.com');
+
+        $mail->isHTML(true);  // Set email format to HTML
+
+        $bodyContent = '<h1>How to Send Email using PHP in Localhost by gole</h1>';
+        $bodyContent .= '<p>This is the HTML email sent from localhost using PHP script by <b>gole</b></p>';
+
+        $mail->Subject = 'Email from Localhost by gole';
+        $mail->Body    = $bodyContent;
+
+        if(!$mail->send()) {
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+        } else {
+            echo 'Message has been sent';
+        }
 
     }
 
