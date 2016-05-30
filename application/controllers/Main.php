@@ -569,21 +569,21 @@ class Main extends CI_Controller {
         $mail->isSMTP();                            // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';             // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                     // Enable SMTP authentication
-        $mail->Username = 'moocapp.pw@gmail.com';          // SMTP username
+        $mail->Username = 'moocapp.pw2@gmail.com';          // SMTP username
         $mail->Password = 'pass.word'; // SMTP password
         $mail->SMTPSecure = 'tls';                  // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                          // TCP port to connect to
 
-        $mail->setFrom('moocapp.pw@gmail.com', 'MOOC APP');
-        //$mail->addReplyTo('moocapp.pw@gmail.com', 'MOOC APP');
+        $mail->setFrom('moocapp.pw2@gmail.com', 'MOOC APP');
+        //$mail->addReplyTo('moocapp.pw2@gmail.com', 'MOOC APP');
         $mail->addAddress('gole1407@gmail.com');   // Add a recipient
         //$mail->addCC('cc@example.com');
         //$mail->addBCC('bcc@example.com');
 
         $mail->isHTML(true);  // Set email format to HTML
 
-        $bodyContent = '<h1>How to Send Email using PHP in Localhost by gole</h1>';
-        $bodyContent .= '<p>This is the HTML email sent from localhost using PHP script by <b>gole</b></p>';
+        $bodyContent = '<h1>CORREO ELECTRONICO DE PRUEBA</h1>';
+        $bodyContent .= '<p>CORREO ENVIADO DESDE CODEIGNITER EN LOCALHOST POR <b>gole</b></p>';
 
         $mail->Subject = 'Email from Localhost by gole';
         $mail->Body    = $bodyContent;
