@@ -570,6 +570,7 @@ class Main extends CI_Controller {
         require_once(APPPATH.'libraries/PHPMailer/PHPMailerAutoload.php');
 
         $correo = $datamail['correo'];
+        $mensaje = $datamail['message'];
 
         $mail = new PHPMailer;
 
@@ -589,8 +590,8 @@ class Main extends CI_Controller {
 
         $mail->isHTML(true);  // Set email format to HTML
 
-        $bodyContent = '<h1>CORREO ELECTRONICO DE PRUEBA</h1>';
-        $bodyContent .= '<p>CORREO ENVIADO DESDE CODEIGNITER EN LOCALHOST POR <b>gole</b></p>';
+        $bodyContent = '<h1>SEGUIMIENTO DE REGISTRO</h1>';
+        $bodyContent .= '<p>'.$mensaje.'</p>';
 
         $mail->Subject = 'Email from Localhost by gole';
         $mail->Body    = $bodyContent;
