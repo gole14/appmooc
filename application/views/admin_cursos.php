@@ -49,8 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <?php echo $fechayhora ?>
             </th>
             <th>
-              <?php echo form_open('main/delete'); ?>
-              <input type="hidden" value="<?php echo $id ?>" name="id">
+              <?php echo form_open('main/deleteCurso'); ?>
+              <input type="hidden" value="<?php echo $idcurso ?>" name="idcurso">
 
               <?php echo form_submit(array('value'=>'Eliminar', 'class'=>'btn btn-warning')); ?>
               <?php echo form_close(); ?><br/>
