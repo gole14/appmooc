@@ -216,7 +216,7 @@ class User_model extends CI_Model {
         $this->db->select('url_video');
         $query = $this->db->get('curso');
         $cursel = $query->result_array();
-        return $cursel['url_video'];
+        return $cursel;
 
     }
 }//CLASS END
