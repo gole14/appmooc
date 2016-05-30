@@ -569,12 +569,12 @@ class Main extends CI_Controller {
         $mail->isSMTP();                            // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';             // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                     // Enable SMTP authentication
-        $mail->Username = 'moocapp.pw2@gmail.com';          // SMTP username
-        $mail->Password = 'pass.word'; // SMTP password
+        $mail->Username = '10460316@itcolima.edu.mx';          // SMTP username
+        $mail->Password = 'jonacrisdulce1992!'; // SMTP password
         $mail->SMTPSecure = 'tls';                  // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                          // TCP port to connect to
 
-        $mail->setFrom('moocapp.pw2@gmail.com', 'MOOC APP');
+        $mail->setFrom('10460316@itcolima.edu.mx', 'MOOC APP');
         //$mail->addReplyTo('moocapp.pw2@gmail.com', 'MOOC APP');
         $mail->addAddress('gole1407@gmail.com');   // Add a recipient
         //$mail->addCC('cc@example.com');
