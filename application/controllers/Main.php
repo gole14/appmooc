@@ -584,7 +584,7 @@ class Main extends CI_Controller {
 
             $data = $this->session->userdata;
 
-            $checkDel = $this->user_model->deleteUser($this->input->post('idcurso'));
+            $checkDel = $this->user_model->deleteCourse($this->input->post('idcurso'));
             if($checkDel){
                 $data = $this->session->userdata;
 
