@@ -9,9 +9,13 @@
 			<?php foreach ($cursitos as $curso): ?>
 
 
-				<?php $nombre = $curso->nombre; ?>
-				<?php $controlador = $curso->cl; ?>
-			    <li><a href="<?php echo site_url('main/'.$controlador); ?>"> <?php echo $nombre ?> </a></li>
+				<?php 
+					$nombre = $curso->nombre;
+					$url = $curso->url_video;
+					$idc = $curso->idcurso; 
+
+				?>
+			    <li><a href="<?php echo site_url('main/cursounico'); ?>"> <?php echo $nombre ?> </a></li>
 
 
 			<?php endforeach; ?>

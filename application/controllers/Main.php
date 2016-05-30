@@ -265,6 +265,15 @@ class Main extends CI_Controller {
             }
         }
 
+        function cursounico(){
+            $data = $this->session->userdata;
+            $data['cursitos'] = $this->user_model->get_courses();
+            $this->load->view('header', $data);
+            $this->load->view('page_curso_unico');
+            $this->load->view('page_menu');
+            $this->load->view('footer');
+        }
+
         function php() {
 
             $data = $this->session->userdata;

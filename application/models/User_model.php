@@ -203,7 +203,9 @@ class User_model extends CI_Model {
     function get_courses(){  
         $this->load->database();    
         $this->db->select('nombre');
-        $this->db->select('cl');
+        //$this->db->select('cl');
+        $this->db->select('url_video');
+        $this->db->select('idcurso');
         $query = $this->db->get('curso');
         $cursitos = $query->result();
         return $cursitos;
